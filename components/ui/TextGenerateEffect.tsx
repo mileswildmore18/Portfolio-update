@@ -36,9 +36,11 @@ export const TextGenerateEffect = ({
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
           return (
+            // Effects of words appearing when text is generated
             <motion.span
               key={word + idx}
-              className="dark:text-white text-black opacity-0"
+            //   Change last word to a different colour and change other words to white in dark mode and black in light mode
+              className={`${idx > 3 ? 'text-purple' : 'dark:text-white text-black' } opacity-0`}
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}
@@ -50,11 +52,11 @@ export const TextGenerateEffect = ({
       </motion.div>
     );
   };
-
+//   Separate the text generator from the next section
   return (
     <div className={cn("font-bold", className)}>
-      <div className="mt-4">
-        <div className=" dark:text-white text-black text-2xl leading-snug tracking-wide">
+      <div className="my-4">
+        <div className=" dark:text-white text-black leading-snug tracking-wide">
           {renderWords()}
         </div>
       </div>

@@ -1,3 +1,5 @@
+import { FaLocationArrow } from "react-icons/fa";
+import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
@@ -36,7 +38,17 @@ const Hero = () => {
             words="Transforming Concepts into Seamless Experiences"
             />
 
-            
+            <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
+                Hello, my name is Miles, a Next.js Developer from Florida.
+            </p>
+            {/* Add the magic button to shwo on the webpage */}
+            <a href="#about">
+                <MagicButton 
+                title="Show my work"
+                icon={<FaLocationArrow />}
+                position="right"
+                />
+            </a>
         </div>
       </div>
     </div>
